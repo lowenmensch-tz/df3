@@ -1,14 +1,8 @@
 import { createStore } from 'vuex'
+import oauth from '@/store/modules/oauth'
 
-export default createStore({
-  state: {
-  },
-  getters: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
+export default new createStore({
   modules: {
+    oauth
   }
 })
