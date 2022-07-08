@@ -1,14 +1,14 @@
 import { createApp, h } from 'vue'
+
+import { BootstrapVue3 } from './plugins/bootstrapVue'
+import { FontAwesomeIcon } from './plugins/fontAwesome'
+
 import App from './App.vue'
 import router from './router'
 import store from './store'
 
-// Traer la librería
-import BootstrapVue3 from 'bootstrap-vue-3'
-
-// Traer el css
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue-3/dist/bootstrap-vue-3.css'
+// CSS global
+import './assets/css/main.styl'
 
 const app = createApp({
   methods: {
@@ -26,5 +26,6 @@ const app = createApp({
   }
 })
 
-// createApp(App).use(store).use(router).use(BootstrapVue3).mount('#app')
+app.component('font-awesome-icon', FontAwesomeIcon)
+
 app.use(store).use(router).use(BootstrapVue3).mount('#app')

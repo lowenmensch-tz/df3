@@ -13,6 +13,8 @@ const mutations = {
 
 const actions = {
   getToken ({ commit }) {
+    commit('loading/SET_LOADING', true, { root: true })
+
     oauth.getToken()
       .then(({ data }) => {
         commit('SET_ACCESS_TOKEN', data.access_token)
@@ -22,6 +24,7 @@ const actions = {
         console.log('Error OAuth', err)
       })
       .finally(() => {
+        commit('loading/SET_LOADING', false, { root: true })
         console.log('Done!')
       })
   }
