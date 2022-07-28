@@ -2,6 +2,7 @@ import { createApp, h } from 'vue'
 
 import { BootstrapVue3 } from './plugins/bootstrapVue'
 import { FontAwesomeIcon } from './plugins/fontAwesome'
+import { formatNumber } from '@/filters/numeral'
 
 import App from './App.vue'
 import router from './router'
@@ -27,5 +28,7 @@ const app = createApp({
 })
 
 app.component('font-awesome-icon', FontAwesomeIcon)
-
+app.config.globalProperties.$filters = {
+  formatNumber
+}
 app.use(store).use(router).use(BootstrapVue3).mount('#app')
