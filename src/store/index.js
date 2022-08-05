@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { createStore } from 'vuex'
 import oauth from './modules/oauth'
 import loading from './modules/loading'

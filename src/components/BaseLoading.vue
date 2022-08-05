@@ -14,6 +14,7 @@
 
 <script>
 export default {
+  /* eslint-disable */
   name: 'Loading',
   // Propiedades que soporta nuestro componente
   props: {
